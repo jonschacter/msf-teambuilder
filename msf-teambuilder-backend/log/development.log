@@ -87,3 +87,214 @@ FOREIGN KEY ("team_id")
   [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
   [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
   [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1 LIMIT $2[0m  [["team_id", 4], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-06-02 14:46:31 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jonschacter/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jonschacter/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.4ms | Allocations: 480)
+Completed 200 OK in 19ms (Views: 13.1ms | ActiveRecord: 0.0ms | Allocations: 2633)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-06-02 14:46:31 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-06-02 14:47:16 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jonschacter/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jonschacter/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.9ms | Allocations: 196)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 909)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 14:47:18 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 5.8ms | ActiveRecord: 4.3ms | Allocations: 5374)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 14:47:49 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 4.7ms | ActiveRecord: 3.0ms | Allocations: 4491)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 14:49:47 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 2.7ms | Allocations: 4470)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 14:51:23 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1006)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 14:51:39 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 5.0ms | ActiveRecord: 3.0ms | Allocations: 4631)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 14:54:44 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>):
+  
+app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>
+app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>
+Started GET "/teams" for ::1 at 2020-06-02 14:55:01 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:5: syntax error, unexpected '}', expecting =>
+            {:character}
+                       ^):
+  
+app/controllers/teams_controller.rb:5: syntax error, unexpected '}', expecting =>
+app/controllers/teams_controller.rb:5: syntax error, unexpected '}', expecting =>
+Started GET "/teams" for ::1 at 2020-06-02 14:55:05 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:5: syntax error, unexpected '}', expecting =>
+            {:characters}
+                        ^):
+  
+app/controllers/teams_controller.rb:5: syntax error, unexpected '}', expecting =>
+app/controllers/teams_controller.rb:5: syntax error, unexpected '}', expecting =>
+Started GET "/teams" for ::1 at 2020-06-02 14:55:14 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>):
+  
+app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>
+app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>
+Started GET "/teams" for ::1 at 2020-06-02 14:55:40 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>):
+  
+app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>
+app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>
+Started GET "/teams" for ::1 at 2020-06-02 14:55:46 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 5.4ms | ActiveRecord: 3.0ms | Allocations: 4544)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 15:01:23 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 500 Internal Server Error in 9ms (Views: 0.3ms | ActiveRecord: 2.7ms | Allocations: 4353)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/teams_controller.rb:5:in `block in index'
+app/controllers/teams_controller.rb:4:in `index'
+Started GET "/teams" for ::1 at 2020-06-02 15:01:36 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (8.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 5.3ms | ActiveRecord: 11.2ms | Allocations: 4528)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 15:01:45 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>):
+  
+app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>
+app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>
+Started GET "/teams" for ::1 at 2020-06-02 15:01:48 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>):
+  
+app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>
+app/controllers/teams_controller.rb:5: syntax error, unexpected '\n', expecting =>
+Started GET "/" for ::1 at 2020-06-02 15:02:47 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jonschacter/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jonschacter/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 395)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 15:02:50 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.2ms | Allocations: 4496)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 15:03:09 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:6: syntax error, unexpected '}', expecting =>
+...    }, :except => {:created_at})
+...                              ^):
+  
+app/controllers/teams_controller.rb:6: syntax error, unexpected '}', expecting =>
+app/controllers/teams_controller.rb:6: syntax error, unexpected '}', expecting =>
+Started GET "/teams" for ::1 at 2020-06-02 15:03:38 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 4439)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 15:03:46 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.9ms | Allocations: 4350)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 15:04:21 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 45ms (Views: 2.4ms | ActiveRecord: 6.2ms | Allocations: 18055)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 15:04:52 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 0.4ms | ActiveRecord: 5.6ms | Allocations: 13507)
+
+
