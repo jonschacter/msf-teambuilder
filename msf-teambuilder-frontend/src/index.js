@@ -13,5 +13,17 @@ function populateTeams(){
 }
 
 function htmlifyTeams(teamsData){
-    
+    teamsData.forEach(team => {
+        const main = document.querySelector("main");
+        const div = document.createElement("div");
+        const p = document.createElement("p");
+
+        div.classList.add("team-card");
+        div.setAttribute("team-id", `${team.id}`);
+
+        p.innerText = `${team.name}`
+
+        div.appendChild(p);
+        main.appendChild(div);
+    })
 }
