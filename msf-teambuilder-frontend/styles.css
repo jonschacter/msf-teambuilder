@@ -1,0 +1,13 @@
+header {
+    background-color: #011530;
+    height: 100px;
+}
+
+header h2 {
+    color: #FCCD2F;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    text-shadow: 1px 1px 3px #723007;
+    font-size: 48px;
+}
