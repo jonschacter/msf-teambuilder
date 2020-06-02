@@ -20,3 +20,10 @@ FOREIGN KEY ("team_id")
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(67613839250438145)[0m
   [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTeam Create (1.2ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Black Order"], ["created_at", "2020-06-02 21:15:37.029042"], ["updated_at", "2020-06-02 21:15:37.029042"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTeam Destroy (1.0ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" LIMIT $1[0m  [["LIMIT", 11]]
