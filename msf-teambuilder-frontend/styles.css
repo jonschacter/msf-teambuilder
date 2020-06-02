@@ -2,37 +2,31 @@ body {
     margin: 0;
     padding: 0;
     background-color: #1440B8;
-  }
-  
+}
+
 header h2 {
-    padding: 10px;
-    margin: 0;
     text-align: center;
-    vertical-align: middle;
-    line-height: 100px;
+    line-height: 80px;
     color: #FB9902;
     text-shadow: 1px 1px 3px black;
     font-size: 48px;
 }
-  
-main {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-gap: 20px;
-    padding-top: 10px;
-    padding-bottom: 30px;
+
+#team-list {
+    margin: 2rem;
 }
   
 div.team-card {
     background-color: #F7E9D4;
     height: 250px;
-    width: 300px;
+    width: 350px;
+    display: inline-grid;
     box-shadow: 10px 10px #091534;
     padding: 10px;
     border-radius: 10px;
+    margin: 10px 10px;
 }
-  
+
 div.team-card p {
     font-size: 1.5em;
     color: black;
@@ -45,27 +39,19 @@ div.team-card li {
     list-style: none;
     padding-right: 20px;
 }
-  
-  /* button {
-    font-size: .65em;
-    color: #fff;
-    background-color: green;
-    border-radius: 10px;
-  }
-  
-  button.release {
-    float: right;
-    background-color: #E1332D;
-  } */
-  
-  @media only screen and (min-width: 500px) {
-    main {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  
-  @media only screen and (min-width: 850px) {
-    main {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-  }
+
+.form-container {
+    width: stretch;
+    height: auto;
+    text-align: center;
+    display: block;
+    background: #1440B8;
+}
+
+.input-text {
+    border-radius: 5px;
+    height: 2rem;
+    width: 60%;
+    font-size: 18px;
+    margin: 3px;
+}
