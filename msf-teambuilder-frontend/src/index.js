@@ -142,14 +142,26 @@ function htmlifyCharacter(character){
     const button = document.createElement("button");
 
     li.setAttribute("character-id", `${character.id}`)
-    li.innerText = `${character.name} - ${character.power}`
+    li.innerText = `${character.name} - ${character.power}   `
     
+    button.innerText = "-"
+
     li.appendChild(button);
     ul.appendChild(li);
+
+    button.addEventListener("click", deleteCharacter);
 
     if (ul.childElementCount >= 5){
         ul.parentElement.querySelector("form").style.display = "none";
     } else {
         ul.parentElement.querySelector("form").style.display = "block";
     }
+}
+
+function deleteCharacter(event){
+    const liNode = event.target.parentElement
+    fetch(`${CHARS_URL}/${liNode.getAttribute("character-id")}`, {
+        method: "DELETE"
+    })
+    .then(liNode.remove())
 }

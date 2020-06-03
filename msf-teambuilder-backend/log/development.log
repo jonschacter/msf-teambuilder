@@ -6713,3 +6713,183 @@ Processing by TeamsController#index as */*
 Completed 200 OK in 300ms (Views: 26.2ms | ActiveRecord: 5.1ms | Allocations: 3177923)
 
 
+Started GET "/teams" for ::1 at 2020-06-02 19:54:27 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 297ms (Views: 26.6ms | ActiveRecord: 4.7ms | Allocations: 3177923)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 19:54:35 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (4.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 305ms (Views: 29.0ms | ActiveRecord: 7.6ms | Allocations: 3177923)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 19:54:42 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 308ms (Views: 29.0ms | ActiveRecord: 4.8ms | Allocations: 3178693)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 19:54:58 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (3.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 305ms (Views: 31.4ms | ActiveRecord: 7.6ms | Allocations: 3178693)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 19:55:39 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (1.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (1.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 311ms (Views: 28.6ms | ActiveRecord: 4.9ms | Allocations: 3177923)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 19:56:26 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 327ms (Views: 29.2ms | ActiveRecord: 4.6ms | Allocations: 3177923)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 19:58:06 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (4.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 326ms (Views: 29.2ms | ActiveRecord: 8.2ms | Allocations: 3179045)
+
+
+Started GET "/teams" for ::1 at 2020-06-02 19:58:43 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 312ms (Views: 30.2ms | ActiveRecord: 4.8ms | Allocations: 3177925)
+
+
+Started DELETE "/characters/6" for ::1 at 2020-06-02 19:58:44 -0700
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for CharactersController):
+  
+actionpack (6.0.3.1) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.1) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/teams" for ::1 at 2020-06-02 19:58:46 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 320ms (Views: 28.7ms | ActiveRecord: 4.8ms | Allocations: 3178694)
+
+
