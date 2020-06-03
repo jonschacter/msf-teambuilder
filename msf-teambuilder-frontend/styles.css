@@ -28,6 +28,7 @@ div.team-card {
 }
 
 div.team-card p {
+    font-weight: bold;
     font-size: 1.5em;
     color: black;
     font-family: Helvetica;
@@ -44,7 +45,6 @@ div.team-card li {
     width: stretch;
     height: auto;
     text-align: center;
-    display: block;
     background: #1440B8;
 }
 
