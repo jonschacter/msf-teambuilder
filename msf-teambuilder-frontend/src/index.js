@@ -3,6 +3,8 @@ const TEAMS_URL = `${BASE_URL}/teams`;
 
 window.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM loaded");
+    const teamFormContainer = document.querySelector(".form-container")
+    teamFormContainer.addEventListener("submit", addNewTeam);
     populateTeams();
 });
 
@@ -35,8 +37,26 @@ function htmlifyTeams(teamsData){
 function htmlifyCharacterForTeam(team, ul){
     team.characters.forEach(character => {
         const li = document.createElement("li");
-
         li.innerText = `${character.name} - ${character.power}`
         ul.appendChild(li);
     })
+}
+
+function addNewTeam(event){
+    event.preventDefault();
+    const nameNode = event.target.querySelector(".input-text")
+    const newTeamObject = {name: nameNode.value}
+    fetch(TEAMS_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(newTeamObject)
+    })
+        .then(resp => resp.json())
+        .then(data => console.log(data))
+        .then(() => {
+            nameNode.value = "";
+        })
 }
