@@ -12,7 +12,15 @@ class CharactersController < ApplicationController
 
     def destroy
         character = Character.find_by(id: params[:id])
+        team = character.team
         character.destroy
+
+        team.characters.each do |other_team_char|
+            if other_team_char.position > character.position
+                other_team_char.move_up
+            end
+        end
+
         render json: character
     end
 

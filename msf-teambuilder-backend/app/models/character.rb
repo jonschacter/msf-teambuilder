@@ -16,9 +16,11 @@ class Character < ApplicationRecord
 
   def move_up
     self.position = self.position - 1
+    self.save
   end
 
   def move_down
     self.position = self.position + 1
+    self.save
   end
 end
