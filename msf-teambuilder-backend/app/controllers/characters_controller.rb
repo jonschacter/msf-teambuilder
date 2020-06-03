@@ -1,6 +1,8 @@
 class CharactersController < ApplicationController
     def create
+        team = Team.find_by(id: params[:team_id])
         character = Character.new(character_params)
+        character.position = (team.characters.length + 1)
         if character.save
             render json: character, except: [:created_at, :updated_at]
         else
