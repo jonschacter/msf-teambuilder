@@ -7,4 +7,23 @@ class TeamsController < ApplicationController
             }
         }, :except => [:created_at, :updated_at])
     end
+
+    def create
+        team = Team.new(team_params)
+        if team.save
+            render json: team.as_json(:include => {
+                :characters => {
+                    :except => [:team_id, :created_at, :updated_at]
+                }
+            }, :except => [:created_at, :updated_at])
+        else
+            render :json => { :errors => team.errors.full_messsages }
+        end
+    end
+
+    private
+
+    def team_params
+        params.require(:team).permit(:name)
+    end
 end
