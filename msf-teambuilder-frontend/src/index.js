@@ -23,54 +23,60 @@ function htmlifyTeams(teamsData){
 
 function htmlifySingleTeam(team){
     const teamListDiv = document.getElementById("team-list");
-        const div = document.createElement("div");
-        const p = document.createElement("p");
-        const button = document.createElement("button");
-        const ul = document.createElement("ul");
-        const form = document.createElement("form");
-        const nameInput = document.createElement("input");
-        const powerInput = document.createElement("input");
-        const submitInput = document.createElement("input");
+    const div = document.createElement("div");
+    const p = document.createElement("p");
+    const button = document.createElement("button");
+    const ul = document.createElement("ul");
+    const form = document.createElement("form");
+    const nameInput = document.createElement("input");
+    const powerInput = document.createElement("input");
+    const hiddenInput = document.createElement("input");
+    const submitInput = document.createElement("input");
 
-        div.classList.add("team-card");
-        div.setAttribute("team-id", `${team.id}`);
+    div.classList.add("team-card");
+    div.setAttribute("team-id", `${team.id}`);
 
-        p.innerText = `${team.name}   `;
+    p.innerText = `${team.name}   `;
 
-        button.textContent = "Delete";
-        button.addEventListener("click", deleteTeam);
+    button.textContent = "Delete";
+    button.addEventListener("click", deleteTeam);
 
-        form.action = CHARS_URL;
-        form.method = "POST";
-        form.classList.add("character-form");
+    form.action = CHARS_URL;
+    form.method = "POST";
+    form.classList.add("character-form");
 
-        nameInput.type = "text";
-        nameInput.name = "name";
-        nameInput.placeholder = "Name";
-        nameInput.value = "";
+    nameInput.type = "text";
+    nameInput.name = "name";
+    nameInput.placeholder = "Name";
+    nameInput.value = "";
 
-        powerInput.type = "number";
-        powerInput.name = "power";
-        powerInput.placeholder = "Power";
-        powerInput.value = "";
+    powerInput.type = "number";
+    powerInput.name = "power";
+    powerInput.placeholder = "Power";
+    powerInput.value = "";
 
-        submitInput.type = "submit";
-        submitInput.value = "Add";
+    hiddenInput.type = "hidden";
+    hiddenInput.name = "team_id";
+    hiddenInput.value = `${team.id}`
 
-        htmlifyCharactersForTeam(team, ul);
+    submitInput.type = "submit";
+    submitInput.value = "Add";
 
-        p.appendChild(button);
-        form.appendChild(nameInput);
-        form.appendChild(powerInput);
-        form.appendChild(submitInput);
+    htmlifyCharactersForTeam(team, ul);
 
-        div.appendChild(p);
-        div.appendChild(form);
-        div.appendChild(ul);
+    p.appendChild(button);
+    form.appendChild(nameInput);
+    form.appendChild(powerInput);
+    form.appendChild(hiddenInput);
+    form.appendChild(submitInput);
 
-        teamListDiv.appendChild(div);
+    div.appendChild(p);
+    div.appendChild(form);
+    div.appendChild(ul);
 
-        submitInput.addEventListener("click", addNewCharacter);
+    teamListDiv.appendChild(div);
+
+    submitInput.addEventListener("click", addNewCharacter);
 }
 
 function htmlifyCharactersForTeam(team, ul){
@@ -112,5 +118,18 @@ function deleteTeam(event){
 
 function addNewCharacter(event){
     event.preventDefault();
-    console.log("submitting character info");
+    const formNode = event.target.parentElement.querySelectorAll("input")
+    const characterObject = {
+        name: formNode[0].value,
+        power: formNode[1].value,
+        team_id: formNode[2].value
+    }
+    fetch(CHARS_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(characterObject)
+    })
 }
