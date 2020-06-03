@@ -1,6 +1,7 @@
 const BASE_URL = "http://localhost:3000";
 const TEAMS_URL = `${BASE_URL}/teams`;
 const CHARS_URL = `${BASE_URL}/characters`;
+const CHAR_URL = `${BASE_URL}/character`;
 
 window.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM loaded");
@@ -126,25 +127,44 @@ function addNewCharacter(event){
 }
 
 function htmlifyCharacter(character){
+    // basic structure
     const ul = document.querySelectorAll(`*[team-id='${character.team_id}']`)[0].querySelector("ul")
     const li = document.createElement("li");
-    const button = document.createElement("button");
 
     li.setAttribute("character-id", `${character.id}`)
     li.innerText = `${character.name} - ${character.power}   `
-    
-    button.innerText = "-"
 
-    li.appendChild(button);
     ul.appendChild(li);
-
-    button.addEventListener("click", deleteCharacter);
 
     if (ul.childElementCount >= 5){
         ul.parentElement.querySelector("form").style.display = "none";
     } else {
         ul.parentElement.querySelector("form").style.display = "block";
     }
+
+    // up button
+    if (character.position > 1) {
+        const upButton = document.createElement("button");
+        upButton.innerText = "^"
+        li.appendChild(upButton);
+        upButton.addEventListener("click", function(){
+            moveCharacter("up");
+        });
+    }
+    // down button
+    if (character.position < 5) {
+        const downButton = document.createElement("button");
+        downButton.innerText = "v"
+        li.appendChild(downButton);
+        downButton.addEventListener("click", function(){
+            moveCharacter("down");
+        });
+    }
+    // delete button
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "-"
+    li.appendChild(deleteButton);
+    deleteButton.addEventListener("click", deleteCharacter);
 }
 
 function deleteCharacter(event){
@@ -153,4 +173,9 @@ function deleteCharacter(event){
         method: "DELETE"
     })
     .then(liNode.remove())
+}
+
+function moveCharacter(direction){
+    // direction is "up" or "down"
+    fetch()
 }
