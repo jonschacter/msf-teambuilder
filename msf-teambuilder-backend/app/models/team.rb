@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-    has_many :characters
+    has_many :characters, dependent: :delete_all
     validates :name, presence: true
 
     def name=(s)
