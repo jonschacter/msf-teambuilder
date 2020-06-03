@@ -5437,3 +5437,42 @@ Processing by TeamsController#index as */*
 Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 6221)
 
 
+Started POST "/characters" for ::1 at 2020-06-02 19:17:45 -0700
+Processing by CharactersController#create as JSON
+  Parameters: {"name"=>"Luke Cage", "power"=>"49582", "team_id"=>"10", "character"=>{"name"=>"Luke Cage", "power"=>"49582", "team_id"=>"10"}}
+Completed 500 Internal Server Error in 37424ms (ActiveRecord: 0.0ms | Allocations: 48470)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/characters_controller.rb:4:in `create'
+Started GET "/teams" for ::1 at 2020-06-02 19:18:33 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (3.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 322ms (Views: 14.4ms | ActiveRecord: 14.1ms | Allocations: 3327673)
+
+
+Started POST "/characters" for ::1 at 2020-06-02 19:18:41 -0700
+Processing by CharactersController#create as JSON
+  Parameters: {"name"=>"Luke Cage", "power"=>"49582", "team_id"=>"10", "character"=>{"name"=>"Luke Cage", "power"=>"49582", "team_id"=>"10"}}
+Completed 500 Internal Server Error in 6239ms (ActiveRecord: 0.0ms | Allocations: 28686)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/characters_controller.rb:4:in `create'

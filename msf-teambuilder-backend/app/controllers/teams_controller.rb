@@ -3,7 +3,7 @@ class TeamsController < ApplicationController
         teams = Team.all
         render json: teams.as_json(:include => {
             :characters => {
-                :except => [:team_id, :created_at, :updated_at]
+                :except => [:created_at, :updated_at]
             }
         }, :except => [:created_at, :updated_at])
     end
@@ -13,7 +13,7 @@ class TeamsController < ApplicationController
         if team.save
             render json: team.as_json(:include => {
                 :characters => {
-                    :except => [:team_id, :created_at, :updated_at]
+                    :except => [:created_at, :updated_at]
                 }
             }, :except => [:created_at, :updated_at])
         else
