@@ -14,7 +14,7 @@ function populateTeams(){
 
 function htmlifyTeams(teamsData){
     teamsData.forEach(team => {
-        const main = document.querySelector("main");
+        const teamListDiv = document.getElementById("team-list");
         const div = document.createElement("div");
         const p = document.createElement("p");
         const ul = document.createElement("ul");
@@ -28,7 +28,7 @@ function htmlifyTeams(teamsData){
 
         div.appendChild(p);
         div.appendChild(ul);
-        main.appendChild(div);
+        teamListDiv.appendChild(div);
     })
 }
 
