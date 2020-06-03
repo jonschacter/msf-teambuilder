@@ -1,7 +1,6 @@
 const BASE_URL = "http://localhost:3000";
 const TEAMS_URL = `${BASE_URL}/teams`;
 const CHARS_URL = `${BASE_URL}/characters`;
-const CHAR_URL = `${BASE_URL}/character`;
 
 window.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM loaded");
@@ -177,17 +176,12 @@ function deleteCharacter(event){
 
 function moveCharacter(direction){
     // direction is "up" or "down"
-    const updateObject = {
-        char_id: event.target.parentElement.getAttribute("character-id"),
-        move: direction
-    };
-    console.log(updateObject);
-    fetch(CHAR_URL, {
+    fetch(`${CHARS_URL}/${event.target.parentElement.getAttribute("character-id")}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json"
         },
-        body: JSON.stringify(updateObject)
+        body: JSON.stringify({move: direction})
     });
 }
