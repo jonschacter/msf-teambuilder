@@ -60,8 +60,6 @@ function htmlifySingleTeam(team){
     submitInput.type = "submit";
     submitInput.value = "Add";
 
-    // htmlifyCharactersForTeam(team, ul);
-
     p.appendChild(button);
     form.appendChild(nameInput);
     form.appendChild(powerInput);
@@ -75,17 +73,17 @@ function htmlifySingleTeam(team){
     teamListDiv.appendChild(div);
 
     submitInput.addEventListener("click", addNewCharacter);
-    team.characters.forEach(character => htmlifyCharacter(character))
+    team.sorted_characters.forEach(character => htmlifyCharacter(character))
 }
 
-function htmlifyCharactersForTeam(team, ul){
-    team.characters.forEach(character => {
-        const li = document.createElement("li");
-        li.setAttribute("character-id", `${character.id}`)
-        li.innerText = `${character.name} - ${character.power}`
-        ul.appendChild(li);
-    })
-}
+// function htmlifyCharactersForTeam(team, ul){
+//     team.characters.forEach(character => {
+//         const li = document.createElement("li");
+//         li.setAttribute("character-id", `${character.id}`)
+//         li.innerText = `${character.name} - ${character.power}`
+//         ul.appendChild(li);
+//     })
+// }
 
 function addNewTeam(event){
     event.preventDefault();

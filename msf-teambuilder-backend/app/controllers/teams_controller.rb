@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
     def index
-        teams = Team.all.sort_by{|team| team.name }
+        teams = Team.all
         render json: teams.as_json(:include => {
             :sorted_characters => {
                 :except => [:created_at, :updated_at]

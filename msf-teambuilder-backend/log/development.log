@@ -31641,3 +31641,241 @@ Processing by TeamsController#index as HTML
 Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 5343)
 
 
+Started GET "/teams" for ::1 at 2020-06-03 13:37:14 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:3:in `sort_by'
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 5349)
+
+
+Started GET "/teams" for ::1 at 2020-06-03 13:39:02 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:3:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 5346)
+
+
+Started POST "/teams" for ::1 at 2020-06-03 13:39:26 -0700
+Processing by TeamsController#create as JSON
+  Parameters: {"name"=>"Fantastic Four", "team"=>{"name"=>"Fantastic Four"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/teams_controller.rb:13:in `create'
+  [1m[36mTeam Create (0.4ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fantastic Four"], ["created_at", "2020-06-03 20:39:26.947426"], ["updated_at", "2020-06-03 20:39:26.947426"]]
+  ↳ app/controllers/teams_controller.rb:13:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/teams_controller.rb:13:in `create'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 3490)
+
+
+Started POST "/characters" for ::1 at 2020-06-03 13:39:31 -0700
+Processing by CharactersController#create as JSON
+  Parameters: {"name"=>"fds", "power"=>"123432", "team_id"=>"4", "character"=>{"name"=>"fds", "power"=>"123432", "team_id"=>"4"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mCharacter Create (0.7ms)[0m  [1m[32mINSERT INTO "characters" ("name", "power", "team_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fds"], ["power", 123432], ["team_id", 4], ["created_at", "2020-06-03 20:39:31.587626"], ["updated_at", "2020-06-03 20:39:31.587626"]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 4166)
+
+
+Started POST "/characters" for ::1 at 2020-06-03 13:39:32 -0700
+Processing by CharactersController#create as JSON
+  Parameters: {"name"=>"fds", "power"=>"123432", "team_id"=>"4", "character"=>{"name"=>"fds", "power"=>"123432", "team_id"=>"4"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "power", "team_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fds"], ["power", 123432], ["team_id", 4], ["created_at", "2020-06-03 20:39:32.919580"], ["updated_at", "2020-06-03 20:39:32.919580"]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 3877)
+
+
+Started POST "/characters" for ::1 at 2020-06-03 13:39:33 -0700
+Processing by CharactersController#create as JSON
+  Parameters: {"name"=>"fds", "power"=>"123432", "team_id"=>"4", "character"=>{"name"=>"fds", "power"=>"123432", "team_id"=>"4"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mCharacter Create (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "power", "team_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fds"], ["power", 123432], ["team_id", 4], ["created_at", "2020-06-03 20:39:33.437132"], ["updated_at", "2020-06-03 20:39:33.437132"]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 3877)
+
+
+Started POST "/characters" for ::1 at 2020-06-03 13:39:33 -0700
+Processing by CharactersController#create as JSON
+  Parameters: {"name"=>"fds", "power"=>"123432", "team_id"=>"4", "character"=>{"name"=>"fds", "power"=>"123432", "team_id"=>"4"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "power", "team_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fds"], ["power", 123432], ["team_id", 4], ["created_at", "2020-06-03 20:39:33.976824"], ["updated_at", "2020-06-03 20:39:33.976824"]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 3877)
+
+
+Started POST "/characters" for ::1 at 2020-06-03 13:39:34 -0700
+Processing by CharactersController#create as JSON
+  Parameters: {"name"=>"fds", "power"=>"123432", "team_id"=>"4", "character"=>{"name"=>"fds", "power"=>"123432", "team_id"=>"4"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "power", "team_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fds"], ["power", 123432], ["team_id", 4], ["created_at", "2020-06-03 20:39:34.517037"], ["updated_at", "2020-06-03 20:39:34.517037"]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 3875)
+
+
+Started DELETE "/teams/4" for ::1 at 2020-06-03 13:39:35 -0700
+Processing by TeamsController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:25:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/teams_controller.rb:26:in `destroy'
+  [1m[36mCharacter Destroy (0.3ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 4]]
+  ↳ app/controllers/teams_controller.rb:26:in `destroy'
+  [1m[36mTeam Destroy (0.3ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/teams_controller.rb:26:in `destroy'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/teams_controller.rb:26:in `destroy'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 3655)
+
+
+Started GET "/teams" for ::1 at 2020-06-03 13:39:36 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:3:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 5345)
+
+
+Started POST "/teams" for ::1 at 2020-06-03 13:39:49 -0700
+Processing by TeamsController#create as JSON
+  Parameters: {"name"=>"Defenders", "team"=>{"name"=>"Defenders"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/teams_controller.rb:13:in `create'
+  [1m[36mTeam Create (0.3ms)[0m  [1m[32mINSERT INTO "teams" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Defenders"], ["created_at", "2020-06-03 20:39:49.281100"], ["updated_at", "2020-06-03 20:39:49.281100"]]
+  ↳ app/controllers/teams_controller.rb:13:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/teams_controller.rb:13:in `create'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 5]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 3202)
+
+
+Started POST "/characters" for ::1 at 2020-06-03 13:40:20 -0700
+Processing by CharactersController#create as JSON
+  Parameters: {"name"=>"Punisher", "power"=>"55024", "team_id"=>"5", "character"=>{"name"=>"Punisher", "power"=>"55024", "team_id"=>"5"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mCharacter Create (0.4ms)[0m  [1m[32mINSERT INTO "characters" ("name", "power", "team_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Punisher"], ["power", 55024], ["team_id", 5], ["created_at", "2020-06-03 20:40:20.135075"], ["updated_at", "2020-06-03 20:40:20.135075"]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 3877)
+
+
+Started POST "/characters" for ::1 at 2020-06-03 13:40:29 -0700
+Processing by CharactersController#create as JSON
+  Parameters: {"name"=>"Iron Fist", "power"=>"49520", "team_id"=>"5", "character"=>{"name"=>"Iron Fist", "power"=>"49520", "team_id"=>"5"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mCharacter Create (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "power", "team_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Iron Fist"], ["power", 49520], ["team_id", 5], ["created_at", "2020-06-03 20:40:29.067221"], ["updated_at", "2020-06-03 20:40:29.067221"]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 3894)
+
+
+Started POST "/characters" for ::1 at 2020-06-03 13:40:36 -0700
+Processing by CharactersController#create as JSON
+  Parameters: {"name"=>"Jessica Jones", "power"=>"44526", "team_id"=>"5", "character"=>{"name"=>"Jessica Jones", "power"=>"44526", "team_id"=>"5"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mCharacter Create (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "power", "team_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jessica Jones"], ["power", 44526], ["team_id", 5], ["created_at", "2020-06-03 20:40:36.569424"], ["updated_at", "2020-06-03 20:40:36.569424"]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.1ms | Allocations: 3894)
+
+
+Started POST "/characters" for ::1 at 2020-06-03 13:40:44 -0700
+Processing by CharactersController#create as JSON
+  Parameters: {"name"=>"Daredevil", "power"=>"44095", "team_id"=>"5", "character"=>{"name"=>"Daredevil", "power"=>"44095", "team_id"=>"5"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mCharacter Create (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "power", "team_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Daredevil"], ["power", 44095], ["team_id", 5], ["created_at", "2020-06-03 20:40:44.378574"], ["updated_at", "2020-06-03 20:40:44.378574"]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 3877)
+
+
+Started POST "/characters" for ::1 at 2020-06-03 13:40:57 -0700
+Processing by CharactersController#create as JSON
+  Parameters: {"name"=>"Luke Cage", "power"=>"43561", "team_id"=>"5", "character"=>{"name"=>"Luke Cage", "power"=>"43561", "team_id"=>"5"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[36mCharacter Create (0.3ms)[0m  [1m[32mINSERT INTO "characters" ("name", "power", "team_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Luke Cage"], ["power", 43561], ["team_id", 5], ["created_at", "2020-06-03 20:40:57.778013"], ["updated_at", "2020-06-03 20:40:57.778013"]]
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:4:in `create'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 3894)
+
+
+Started GET "/teams" for ::1 at 2020-06-03 13:41:01 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:3:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 5]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 6908)
+
+
