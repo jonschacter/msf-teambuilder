@@ -33,6 +33,7 @@ function htmlifyTeam(team){
         p.innerText = `${team.name}   `;
 
         button.textContent = "Delete";
+        button.addEventListener("click", deleteTeam);
 
         htmlifyCharacterForTeam(team, ul);
 
@@ -68,4 +69,12 @@ function addNewTeam(event){
         .then(() => {
             nameNode.value = "";
         })
+}
+
+function deleteTeam(event){
+    const div = event.target.parentElement.parentElement
+    const teamId = div.getAttribute("team-id")
+    fetch(`${TEAMS_URL}/${teamId}`, {
+        method: "DELETE"
+    })
 }
