@@ -24,6 +24,23 @@ class CharactersController < ApplicationController
         render json: character
     end
 
+    def update
+        character = Character.find_by(id: params[:id])
+        team = character.team
+
+        if params[:move] == "up"
+            displaced_char = team.characters.find_by(position: (character.position - 1))
+            displaced_char.move_down
+            character.move_up
+        elsif params[:move] == "down"
+            displaced_char = team.characters.find_by(position: (character.position + 1))
+            displaced_char.move_up
+            character.move_down
+        end
+
+        render json: character
+    end
+
     private
     
     def character_params

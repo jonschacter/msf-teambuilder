@@ -33250,3 +33250,535 @@ puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.5) lib/puma/server.rb:472:in `process_client'
 puma (4.3.5) lib/puma/server.rb:328:in `block in run'
 puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/teams" for ::1 at 2020-06-03 14:33:15 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 30ms (Views: 0.6ms | ActiveRecord: 9.5ms | Allocations: 15874)
+
+
+Started GET "/teams" for ::1 at 2020-06-03 14:33:29 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 18ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 6910)
+
+
+Started PATCH "/characters/6" for ::1 at 2020-06-03 14:33:31 -0700
+Processing by CharactersController#update as JSON
+  Parameters: {"char_id"=>"6", "move"=>"down", "id"=>"6", "character"=>{}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 41)
+
+
+Started GET "/teams" for ::1 at 2020-06-03 14:33:53 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 24ms (Views: 0.5ms | ActiveRecord: 6.0ms | Allocations: 15800)
+
+
+Started PATCH "/characters/7" for ::1 at 2020-06-03 14:33:54 -0700
+Processing by CharactersController#update as JSON
+  Parameters: {"char_id"=>"7", "move"=>"up", "id"=>"7", "character"=>{}}
+Completed 500 Internal Server Error in 70862ms (ActiveRecord: 0.0ms | Allocations: 79547)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `update'
+app/controllers/characters_controller.rb:29:in `update'
+Started GET "/teams" for ::1 at 2020-06-03 14:35:05 -0700
+Started GET "/teams" for ::1 at 2020-06-03 14:35:05 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (3.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (6.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (1.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  [1m[36mCharacter Load (1.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (36.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (1.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (6.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (6.5ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+Completed 200 OK in 362ms (Views: 22.5ms | ActiveRecord: 61.7ms | Allocations: 3706889)
+
+
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 433ms (Views: 23.1ms | ActiveRecord: 18.2ms | Allocations: 4475617)
+
+
+Started GET "/teams" for ::1 at 2020-06-03 14:35:21 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 280ms (Views: 26.6ms | ActiveRecord: 4.1ms | Allocations: 2538215)
+
+
+Started PATCH "/characters/6" for ::1 at 2020-06-03 14:35:23 -0700
+Processing by CharactersController#update as JSON
+  Parameters: {"move"=>"down", "id"=>"6", "character"=>{}}
+Completed 500 Internal Server Error in 9447ms (ActiveRecord: 0.0ms | Allocations: 28490)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `update'
+app/controllers/characters_controller.rb:29:in `update'
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1 AND "characters"."position" = $2 LIMIT $3[0m  [["team_id", 1], ["position", 1], ["LIMIT", 1]]
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1 AND "characters"."position" = $2 LIMIT $3[0m  [["team_id", 1], ["position", 3], ["LIMIT", 1]]
+Started GET "/teams" for ::1 at 2020-06-03 14:40:11 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 37ms (Views: 0.9ms | ActiveRecord: 8.9ms | Allocations: 20398)
+
+
+Started PATCH "/characters/8" for ::1 at 2020-06-03 14:40:14 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/characters_controller.rb:31: syntax error, unexpected '{', expecting then or ';' or '\n'
+...     if params[:move] == "up" {
+...                              ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/characters_controller.rb:34: syntax error, unexpected '}', expecting end
+        } elsif params[:move] == "down...
+        ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/characters_controller.rb:34: syntax error, unexpected '{', expecting end
+...elsif params[:move] == "down" {
+...                              ^):
+  
+app/controllers/characters_controller.rb:31: syntax error, unexpected '{', expecting then or ';' or '\n'
+app/controllers/characters_controller.rb:34: syntax error, unexpected '}', expecting end
+app/controllers/characters_controller.rb:34: syntax error, unexpected '{', expecting end
+app/controllers/characters_controller.rb:31: syntax error, unexpected '{', expecting then or ';' or '\n'
+app/controllers/characters_controller.rb:34: syntax error, unexpected '}', expecting end
+app/controllers/characters_controller.rb:34: syntax error, unexpected '{', expecting end
+Started GET "/teams" for ::1 at 2020-06-03 14:41:03 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 38ms (Views: 0.6ms | ActiveRecord: 6.2ms | Allocations: 15824)
+
+
+Started PATCH "/characters/8" for ::1 at 2020-06-03 14:41:04 -0700
+Processing by CharactersController#update as JSON
+  Parameters: {"move"=>"up", "id"=>"8", "character"=>{}}
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28:in `update'
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:29:in `update'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1 AND "characters"."position" = $2 LIMIT $3[0m  [["team_id", 2], ["position", 2], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:32:in `update'
+Completed 500 Internal Server Error in 14261ms (ActiveRecord: 0.5ms | Allocations: 46862)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `update'
+app/controllers/characters_controller.rb:38:in `update'
+Started GET "/teams" for ::1 at 2020-06-03 14:41:42 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (3.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 399ms (Views: 23.6ms | ActiveRecord: 16.3ms | Allocations: 4214686)
+
+
+Started DELETE "/characters/47" for ::1 at 2020-06-03 14:41:47 -0700
+Processing by CharactersController#destroy as */*
+  Parameters: {"id"=>"47"}
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:14:in `destroy'
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:15:in `destroy'
+  [1m[35m (4.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[36mCharacter Destroy (0.9ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 47]]
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/characters_controller.rb:18:in `destroy'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (1.2ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 1], ["updated_at", "2020-06-03 21:41:47.362207"], ["id", 48]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (1.1ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 2], ["updated_at", "2020-06-03 21:41:47.426511"], ["id", 49]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (0.9ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 3], ["updated_at", "2020-06-03 21:41:47.487147"], ["id", 50]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (0.9ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 4], ["updated_at", "2020-06-03 21:41:47.549538"], ["id", 51]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+Completed 200 OK in 390ms (Views: 9.8ms | ActiveRecord: 28.4ms | Allocations: 3807299)
+
+
+Started DELETE "/characters/48" for ::1 at 2020-06-03 14:41:47 -0700
+Processing by CharactersController#destroy as */*
+  Parameters: {"id"=>"48"}
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:14:in `destroy'
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:15:in `destroy'
+  [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[36mCharacter Destroy (0.8ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 48]]
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[36mCharacter Load (0.7ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/characters_controller.rb:18:in `destroy'
+  [1m[35m (3.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (4.0ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 1], ["updated_at", "2020-06-03 21:41:47.877890"], ["id", 49]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (1.3ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 2], ["updated_at", "2020-06-03 21:41:47.936788"], ["id", 50]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (0.9ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 3], ["updated_at", "2020-06-03 21:41:48.001285"], ["id", 51]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+Completed 200 OK in 310ms (Views: 7.9ms | ActiveRecord: 24.0ms | Allocations: 2987584)
+
+
+Started DELETE "/characters/49" for ::1 at 2020-06-03 14:41:48 -0700
+Processing by CharactersController#destroy as */*
+  Parameters: {"id"=>"49"}
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:14:in `destroy'
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:15:in `destroy'
+  [1m[35m (4.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[36mCharacter Destroy (4.1ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 49]]
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/characters_controller.rb:18:in `destroy'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (1.1ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 1], ["updated_at", "2020-06-03 21:41:48.445302"], ["id", 50]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (4.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (1.2ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 2], ["updated_at", "2020-06-03 21:41:48.511633"], ["id", 51]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+Completed 200 OK in 261ms (Views: 8.6ms | ActiveRecord: 21.8ms | Allocations: 2562699)
+
+
+Started DELETE "/characters/50" for ::1 at 2020-06-03 14:41:48 -0700
+Processing by CharactersController#destroy as */*
+  Parameters: {"id"=>"50"}
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:14:in `destroy'
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:15:in `destroy'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[36mCharacter Destroy (1.1ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 50]]
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/characters_controller.rb:18:in `destroy'
+  [1m[35m (3.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (1.2ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 1], ["updated_at", "2020-06-03 21:41:48.925657"], ["id", 51]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+Completed 200 OK in 193ms (Views: 11.4ms | ActiveRecord: 11.8ms | Allocations: 1871750)
+
+
+Started DELETE "/characters/51" for ::1 at 2020-06-03 14:41:49 -0700
+Processing by CharactersController#destroy as */*
+  Parameters: {"id"=>"51"}
+  [1m[36mCharacter Load (4.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:14:in `destroy'
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:15:in `destroy'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[36mCharacter Destroy (1.2ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."id" = $1[0m  [["id", 51]]
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/characters_controller.rb:16:in `destroy'
+  [1m[36mCharacter Load (1.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/characters_controller.rb:18:in `destroy'
+Completed 200 OK in 135ms (Views: 9.3ms | ActiveRecord: 9.7ms | Allocations: 1282065)
+
+
+Started DELETE "/teams/10" for ::1 at 2020-06-03 14:41:49 -0700
+Processing by TeamsController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mTeam Load (3.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:25:in `destroy'
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/teams_controller.rb:26:in `destroy'
+  [1m[36mCharacter Destroy (4.7ms)[0m  [1m[31mDELETE FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 10]]
+  ↳ app/controllers/teams_controller.rb:26:in `destroy'
+  [1m[36mTeam Destroy (1.3ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/teams_controller.rb:26:in `destroy'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/teams_controller.rb:26:in `destroy'
+Completed 200 OK in 116ms (Views: 7.8ms | ActiveRecord: 12.5ms | Allocations: 1088486)
+
+
+Started PATCH "/characters/15" for ::1 at 2020-06-03 14:41:52 -0700
+Processing by CharactersController#update as JSON
+  Parameters: {"move"=>"up", "id"=>"15", "character"=>{}}
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28:in `update'
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:29:in `update'
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1 AND "characters"."position" = $2 LIMIT $3[0m  [["team_id", 3], ["position", 4], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:32:in `update'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:24:in `move_down'
+  [1m[36mCharacter Update (1.3ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 5], ["updated_at", "2020-06-03 21:41:52.898390"], ["id", 14]]
+  ↳ app/models/character.rb:24:in `move_down'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:24:in `move_down'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (1.3ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 4], ["updated_at", "2020-06-03 21:41:52.968057"], ["id", 15]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+Completed 200 OK in 233ms (Views: 12.0ms | ActiveRecord: 9.8ms | Allocations: 2358455)
+
+
+Started GET "/teams" for ::1 at 2020-06-03 14:41:54 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 248ms (Views: 24.5ms | ActiveRecord: 4.0ms | Allocations: 2500832)
+
+
+Started PATCH "/characters/15" for ::1 at 2020-06-03 14:41:56 -0700
+Processing by CharactersController#update as JSON
+  Parameters: {"move"=>"up", "id"=>"15", "character"=>{}}
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28:in `update'
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:29:in `update'
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1 AND "characters"."position" = $2 LIMIT $3[0m  [["team_id", 3], ["position", 3], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:32:in `update'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:24:in `move_down'
+  [1m[36mCharacter Update (4.3ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 4], ["updated_at", "2020-06-03 21:41:56.161697"], ["id", 13]]
+  ↳ app/models/character.rb:24:in `move_down'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:24:in `move_down'
+  [1m[35m (4.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (1.4ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 3], ["updated_at", "2020-06-03 21:41:56.237260"], ["id", 15]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+Completed 200 OK in 246ms (Views: 11.9ms | ActiveRecord: 15.9ms | Allocations: 2358169)
+
+
+Started GET "/teams" for ::1 at 2020-06-03 14:41:57 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (4.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 249ms (Views: 24.2ms | ActiveRecord: 6.9ms | Allocations: 2500832)
+
+
+Started GET "/teams" for ::1 at 2020-06-03 14:42:15 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (1.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (3.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 469ms (Views: 25.6ms | ActiveRecord: 16.9ms | Allocations: 4649430)
+
+
+Started PATCH "/characters/15" for ::1 at 2020-06-03 14:42:19 -0700
+Processing by CharactersController#update as JSON
+  Parameters: {"move"=>"down", "id"=>"15", "character"=>{}}
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28:in `update'
+  [1m[36mTeam Load (3.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:29:in `update'
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1 AND "characters"."position" = $2 LIMIT $3[0m  [["team_id", 3], ["position", 4], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:36:in `update'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (1.4ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 3], ["updated_at", "2020-06-03 21:42:19.398664"], ["id", 13]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:24:in `move_down'
+  [1m[36mCharacter Update (1.3ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 4], ["updated_at", "2020-06-03 21:42:19.469777"], ["id", 15]]
+  ↳ app/models/character.rb:24:in `move_down'
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:24:in `move_down'
+Completed 200 OK in 267ms (Views: 12.2ms | ActiveRecord: 12.4ms | Allocations: 2573769)
+
+
+Started GET "/teams" for ::1 at 2020-06-03 14:42:20 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.8ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (4.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 271ms (Views: 28.7ms | ActiveRecord: 7.0ms | Allocations: 2500834)
+
+
+Started PATCH "/characters/15" for ::1 at 2020-06-03 14:42:21 -0700
+Processing by CharactersController#update as JSON
+  Parameters: {"move"=>"down", "id"=>"15", "character"=>{}}
+  [1m[36mCharacter Load (1.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:28:in `update'
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" WHERE "teams"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:29:in `update'
+  [1m[36mCharacter Load (1.6ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1 AND "characters"."position" = $2 LIMIT $3[0m  [["team_id", 3], ["position", 5], ["LIMIT", 1]]
+  ↳ app/controllers/characters_controller.rb:36:in `update'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[36mCharacter Update (1.6ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 4], ["updated_at", "2020-06-03 21:42:22.027902"], ["id", 14]]
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:19:in `move_up'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/character.rb:24:in `move_down'
+  [1m[36mCharacter Update (1.5ms)[0m  [1m[33mUPDATE "characters" SET "position" = $1, "updated_at" = $2 WHERE "characters"."id" = $3[0m  [["position", 5], ["updated_at", "2020-06-03 21:42:22.107635"], ["id", 15]]
+  ↳ app/models/character.rb:24:in `move_down'
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/character.rb:24:in `move_down'
+Completed 200 OK in 269ms (Views: 11.9ms | ActiveRecord: 14.7ms | Allocations: 2359557)
+
+
+Started GET "/teams" for ::1 at 2020-06-03 14:42:23 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (4.0ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 272ms (Views: 28.9ms | ActiveRecord: 6.9ms | Allocations: 2500836)
+
+
