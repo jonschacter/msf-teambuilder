@@ -24,16 +24,21 @@ function htmlifyTeam(team){
     const teamListDiv = document.getElementById("team-list");
         const div = document.createElement("div");
         const p = document.createElement("p");
+        const button = document.createElement("button");
         const ul = document.createElement("ul");
 
         div.classList.add("team-card");
         div.setAttribute("team-id", `${team.id}`);
 
-        p.innerText = `${team.name}`
+        p.innerText = `${team.name}   `;
 
-        htmlifyCharacterForTeam(team, ul)
+        button.textContent = "Delete";
 
+        htmlifyCharacterForTeam(team, ul);
+
+        p.appendChild(button);
         div.appendChild(p);
+        // div.appendChild(button);
         div.appendChild(ul);
         teamListDiv.appendChild(div);
 }

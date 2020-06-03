@@ -55,3 +55,19 @@ div.team-card li {
     font-size: 18px;
     margin: 3px;
 }
+
+button {
+    background-color: #e04b52;
+    border: none;
+    border-radius: 5px;
+    height: 1rem;
+    width: max-content;
+    color: whitesmoke;
+    font-size: 10px;
+}
+  
+button:hover {
+    background-color: whitesmoke;
+    border: #e04b52 solid 1px;
+    color: #e04b52;
+}
