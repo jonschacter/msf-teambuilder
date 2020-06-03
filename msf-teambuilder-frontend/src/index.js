@@ -12,13 +12,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
 function populateTeams(){
     fetch(TEAMS_URL)
         .then(resp => resp.json())
-        .then(teams => htmlifyTeams(teams));
-}
-
-function htmlifyTeams(teamsData){
-    teamsData.forEach(team => {
-        htmlifySingleTeam(team);
-    })
+        .then(teams => {
+            teams.forEach(team => {
+                htmlifySingleTeam(team);
+            })
+        });
 }
 
 function htmlifySingleTeam(team){
@@ -62,7 +60,7 @@ function htmlifySingleTeam(team){
     submitInput.type = "submit";
     submitInput.value = "Add";
 
-    htmlifyCharactersForTeam(team, ul);
+    // htmlifyCharactersForTeam(team, ul);
 
     p.appendChild(button);
     form.appendChild(nameInput);
@@ -77,6 +75,7 @@ function htmlifySingleTeam(team){
     teamListDiv.appendChild(div);
 
     submitInput.addEventListener("click", addNewCharacter);
+    team.characters.forEach(character => htmlifyCharacter(character))
 }
 
 function htmlifyCharactersForTeam(team, ul){
@@ -132,4 +131,25 @@ function addNewCharacter(event){
         },
         body: JSON.stringify(characterObject)
     })
+    .then(resp => resp.json())
+    .then(data => htmlifyCharacter(data))
+    .catch(error => console.log(error))
+}
+
+function htmlifyCharacter(character){
+    const ul = document.querySelectorAll(`*[team-id='${character.team_id}']`)[0].querySelector("ul")
+    const li = document.createElement("li");
+    const button = document.createElement("button");
+
+    li.setAttribute("character-id", `${character.id}`)
+    li.innerText = `${character.name} - ${character.power}`
+    
+    li.appendChild(button);
+    ul.appendChild(li);
+
+    if (ul.childElementCount >= 5){
+        ul.parentElement.querySelector("form").style.display = "none";
+    } else {
+        ul.parentElement.querySelector("form").style.display = "block";
+    }
 }
