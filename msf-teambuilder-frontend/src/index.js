@@ -77,4 +77,5 @@ function deleteTeam(event){
     fetch(`${TEAMS_URL}/${teamId}`, {
         method: "DELETE"
     })
+        .then(div.remove());
 }
