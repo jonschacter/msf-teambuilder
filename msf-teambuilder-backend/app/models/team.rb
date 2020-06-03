@@ -7,6 +7,6 @@ class Team < ApplicationRecord
     end
 
     def sorted_characters
-        self.characters.sort_by{|char| char.name}
+        self.characters.sort_by{|char| char.position}
     end
 end
