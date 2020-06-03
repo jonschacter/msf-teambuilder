@@ -2,7 +2,7 @@ class CharactersController < ApplicationController
     def create
         character = Character.new(character_params)
         if character.save
-            render :json character.as_json(except: [:created_at, :updated_at])
+            render json: character, except: [:created_at, :updated_at]
         else
             render :json => { :errors => character.errors.full_messsages }   
         end
