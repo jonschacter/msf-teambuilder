@@ -16,7 +16,12 @@ function populateTeams(){
 
 function htmlifyTeams(teamsData){
     teamsData.forEach(team => {
-        const teamListDiv = document.getElementById("team-list");
+        htmlifyTeam(team);
+    })
+}
+
+function htmlifyTeam(team){
+    const teamListDiv = document.getElementById("team-list");
         const div = document.createElement("div");
         const p = document.createElement("p");
         const ul = document.createElement("ul");
@@ -31,7 +36,6 @@ function htmlifyTeams(teamsData){
         div.appendChild(p);
         div.appendChild(ul);
         teamListDiv.appendChild(div);
-    })
 }
 
 function htmlifyCharacterForTeam(team, ul){
@@ -55,7 +59,7 @@ function addNewTeam(event){
         body: JSON.stringify(newTeamObject)
     })
         .then(resp => resp.json())
-        .then(data => console.log(data))
+        .then(data => htmlifyTeam(data))
         .then(() => {
             nameNode.value = "";
         })
