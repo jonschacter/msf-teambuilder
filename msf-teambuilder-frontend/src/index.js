@@ -14,14 +14,20 @@ function populateTeams(){
         .then(resp => resp.json())
         .then(teams => {
             teams.forEach(team => {
-                htmlifySingleTeam(team);
+                htmlifySingleTeam(team, null);
             })
         });
 }
 
-function htmlifySingleTeam(team){
+function htmlifySingleTeam(team, fedDiv){
     const teamListDiv = document.getElementById("team-list");
-    const div = document.createElement("div");
+    let div = null
+    if (fedDiv === null) {
+        div = document.createElement("div");
+        teamListDiv.appendChild(div);
+    } else {
+        div = fedDiv;
+    }
     const p = document.createElement("p");
     const button = document.createElement("button");
     const ul = document.createElement("ul");
@@ -70,7 +76,7 @@ function htmlifySingleTeam(team){
     div.appendChild(form);
     div.appendChild(ul);
 
-    teamListDiv.appendChild(div);
+
 
     submitInput.addEventListener("click", addNewCharacter);
     team.sorted_characters.forEach(character => htmlifyCharacter(character));
@@ -183,5 +189,13 @@ function moveCharacter(direction){
             "Accept": "application/json"
         },
         body: JSON.stringify({move: direction})
-    });
+    })
+    .then(resp => resp.json())
+    .then(data => refreshTeam(data))
+}
+
+function refreshTeam(team) {
+    const div = document.querySelectorAll(`*[team-id='${team.id}']`)[0];
+    div.innerHTML = "";
+    htmlifySingleTeam(team, div);
 }

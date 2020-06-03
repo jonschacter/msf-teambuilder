@@ -38,7 +38,11 @@ class CharactersController < ApplicationController
             character.move_down
         end
 
-        render json: character
+        render json: character.team.as_json(:include => {
+                :sorted_characters => {
+                    :except => [:created_at, :updated_at]
+                }
+            }, :except => [:created_at, :updated_at])
     end
 
     private
