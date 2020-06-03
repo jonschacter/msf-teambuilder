@@ -177,5 +177,17 @@ function deleteCharacter(event){
 
 function moveCharacter(direction){
     // direction is "up" or "down"
-    fetch()
+    const updateObject = {
+        char_id: event.target.parentElement.getAttribute("character-id"),
+        move: direction
+    };
+    console.log(updateObject);
+    fetch(CHAR_URL, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(updateObject)
+    });
 }
