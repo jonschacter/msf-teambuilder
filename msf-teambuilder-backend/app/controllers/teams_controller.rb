@@ -17,7 +17,7 @@ class TeamsController < ApplicationController
                 }
             }, :except => [:created_at, :updated_at])
         else
-            render :json => { :errors => team.errors.full_messsages }
+            render :json => { :errors => team.errors.full_messages }
         end
     end
 

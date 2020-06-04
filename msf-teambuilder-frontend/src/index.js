@@ -125,6 +125,7 @@ function addNewTeam(event){
         .then(() => {
             nameNode.value = "";
         })
+        .catch(error => console.log(error))
 }
 
 function deleteTeam(event){
@@ -182,7 +183,6 @@ function deleteCharacter(event){
     })
     .then(resp => resp.json())
     .then(data => refreshTeam(data))
-    .catch(error => console.log(error))
 }
 
 function moveCharacter(direction){

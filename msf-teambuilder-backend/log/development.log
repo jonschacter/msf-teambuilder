@@ -36307,3 +36307,205 @@ Processing by TeamsController#index as */*
 Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 5343)
 
 
+Started GET "/teams" for ::1 at 2020-06-04 16:45:01 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 5343)
+
+
+Started POST "/teams" for ::1 at 2020-06-04 16:45:05 -0700
+Processing by TeamsController#create as JSON
+  Parameters: {"name"=>"", "team"=>{"name"=>""}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1663)
+
+
+  
+NoMethodError (undefined method `full_messsages' for #<ActiveModel::Errors:0x00007fee4a22a2a0>
+Did you mean?  full_message
+               full_messages):
+  
+app/controllers/teams_controller.rb:20:in `create'
+Started GET "/teams" for ::1 at 2020-06-04 16:45:35 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 5344)
+
+
+Started POST "/teams" for ::1 at 2020-06-04 16:45:37 -0700
+Processing by TeamsController#create as JSON
+  Parameters: {"name"=>"", "team"=>{"name"=>""}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1350)
+
+
+  
+NoMethodError (undefined method `full_messsages' for #<ActiveModel::Errors:0x00007fee1b2947d8>
+Did you mean?  full_message
+               full_messages):
+  
+app/controllers/teams_controller.rb:20:in `create'
+Started GET "/teams" for ::1 at 2020-06-04 16:49:47 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 5347)
+
+
+Started POST "/teams" for ::1 at 2020-06-04 16:49:48 -0700
+Processing by TeamsController#create as JSON
+  Parameters: {"name"=>"", "team"=>{"name"=>""}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1351)
+
+
+  
+NoMethodError (undefined method `full_messsages' for #<ActiveModel::Errors:0x00007fee3a5b0f88>
+Did you mean?  full_message
+               full_messages):
+  
+app/controllers/teams_controller.rb:20:in `create'
+Started GET "/teams" for ::1 at 2020-06-04 16:50:27 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 5344)
+
+
+Started POST "/teams" for ::1 at 2020-06-04 16:50:29 -0700
+Processing by TeamsController#create as JSON
+  Parameters: {"name"=>"", "team"=>{"name"=>""}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1350)
+
+
+  
+NoMethodError (undefined method `full_messsages' for #<ActiveModel::Errors:0x00007fee2a145ad0>
+Did you mean?  full_message
+               full_messages):
+  
+app/controllers/teams_controller.rb:20:in `create'
+Started GET "/teams" for ::1 at 2020-06-04 16:52:11 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 38ms (Views: 0.7ms | ActiveRecord: 8.8ms | Allocations: 18834)
+
+
+Started POST "/teams" for ::1 at 2020-06-04 16:52:13 -0700
+Processing by TeamsController#create as JSON
+  Parameters: {"name"=>"", "team"=>{"name"=>""}}
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 1074)
+
+
+Started POST "/teams" for ::1 at 2020-06-04 16:52:19 -0700
+Processing by TeamsController#create as JSON
+  Parameters: {"name"=>"", "team"=>{"name"=>""}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 776)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 16:52:41 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 5364)
+
+
+Started POST "/teams" for ::1 at 2020-06-04 16:52:42 -0700
+Processing by TeamsController#create as JSON
+  Parameters: {"name"=>"", "team"=>{"name"=>""}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 776)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 16:52:55 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 5345)
+
+
+Started POST "/teams" for ::1 at 2020-06-04 16:52:56 -0700
+Processing by TeamsController#create as JSON
+  Parameters: {"name"=>"", "team"=>{"name"=>""}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 766)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 16:54:49 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 5354)
+
+
+Started POST "/teams" for ::1 at 2020-06-04 16:54:51 -0700
+Processing by TeamsController#create as JSON
+  Parameters: {"name"=>"", "team"=>{"name"=>""}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 767)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 16:55:02 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 5354)
+
+
+Started POST "/teams" for ::1 at 2020-06-04 16:55:04 -0700
+Processing by TeamsController#create as JSON
+  Parameters: {"name"=>"", "team"=>{"name"=>""}}
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 767)
+
+
