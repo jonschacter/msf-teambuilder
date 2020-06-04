@@ -41,6 +41,12 @@ div.team-card li {
     padding-right: 20px;
 }
 
+#error-message-div {
+    color: red;
+    padding-left: 50px;
+    font-size: 1.5em;
+}
+
 .form-container {
     width: stretch;
     height: auto;
