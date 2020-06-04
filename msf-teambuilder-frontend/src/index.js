@@ -75,10 +75,37 @@ function htmlifySingleTeam(team, fedDiv){
     div.appendChild(form);
     div.appendChild(ul);
 
-
-
     submitInput.addEventListener("click", addNewCharacter);
     team.sorted_characters.forEach(character => htmlifyCharacter(character));
+    div.querySelectorAll("li").forEach(addCharacterButtons)
+}
+
+function addCharacterButtons(li, index) {
+    // up button
+    if (index > 0) {
+        const upButton = document.createElement("button");
+        upButton.innerText = "^"
+        li.appendChild(upButton);
+        upButton.addEventListener("click", function(){
+        moveCharacter("up");
+        });
+    };
+
+    // down button
+    if (index < li.parentElement.children.length - 1) {
+        const downButton = document.createElement("button");
+        downButton.innerText = "v"
+        li.appendChild(downButton);
+        downButton.addEventListener("click", function(){
+            moveCharacter("down");
+        });
+    }
+
+    // delete button
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "-"
+    li.appendChild(deleteButton);
+    deleteButton.addEventListener("click", deleteCharacter);
 }
 
 function addNewTeam(event){
@@ -94,7 +121,7 @@ function addNewTeam(event){
         body: JSON.stringify(newTeamObject)
     })
         .then(resp => resp.json())
-        .then(data => htmlifySingleTeam(data))
+        .then(data => htmlifySingleTeam(data, null))
         .then(() => {
             nameNode.value = "";
         })
@@ -111,6 +138,7 @@ function deleteTeam(event){
 
 function addNewCharacter(event){
     event.preventDefault();
+    const div = event.target.parentElement.parentElement;
     const formNode = event.target.parentElement.querySelectorAll("input")
     const characterObject = {
         name: formNode[0].value,
@@ -126,7 +154,7 @@ function addNewCharacter(event){
         body: JSON.stringify(characterObject)
     })
     .then(resp => resp.json())
-    .then(data => htmlifyCharacter(data))
+    .then(data => refreshTeam(data))
     .catch(error => console.log(error))
 }
 
@@ -139,35 +167,12 @@ function htmlifyCharacter(character){
 
     ul.appendChild(li);
 
+    // hide form if full team - show if incomplete
     if (ul.childElementCount >= 5){
         ul.parentElement.querySelector("form").style.display = "none";
     } else {
         ul.parentElement.querySelector("form").style.display = "block";
     }
-
-    // up button
-    if (character.position > 1) {
-        const upButton = document.createElement("button");
-        upButton.innerText = "^"
-        li.appendChild(upButton);
-        upButton.addEventListener("click", function(){
-            moveCharacter("up");
-        });
-    }
-    // down button
-    if (character.position < 5) {
-        const downButton = document.createElement("button");
-        downButton.innerText = "v"
-        li.appendChild(downButton);
-        downButton.addEventListener("click", function(){
-            moveCharacter("down");
-        });
-    }
-    // delete button
-    const deleteButton = document.createElement("button");
-    deleteButton.innerText = "-"
-    li.appendChild(deleteButton);
-    deleteButton.addEventListener("click", deleteCharacter);
 }
 
 function deleteCharacter(event){
@@ -175,11 +180,13 @@ function deleteCharacter(event){
     fetch(`${CHARS_URL}/${liNode.getAttribute("character-id")}`, {
         method: "DELETE"
     })
-    .then(liNode.remove())
+    .then(resp => resp.json())
+    .then(data => refreshTeam(data))
+    .catch(error => console.log(error))
 }
 
 function moveCharacter(direction){
-    // direction is "up" or "down"
+    // direction is either "up" or "down"
     fetch(`${CHARS_URL}/${event.target.parentElement.getAttribute("character-id")}`, {
         method: "PATCH",
         headers: {
