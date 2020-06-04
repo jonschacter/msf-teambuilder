@@ -34270,3 +34270,215 @@ Completed 500 Internal Server Error in 205ms (ActiveRecord: 5.3ms | Allocations:
 NoMethodError (undefined method `move_up' for nil:NilClass):
   
 app/controllers/characters_controller.rb:37:in `update'
+Started GET "/teams" for ::1 at 2020-06-04 15:34:17 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (3.9ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 46ms (Views: 0.5ms | ActiveRecord: 11.0ms | Allocations: 17127)
+
+
+Started GET "/" for ::1 at 2020-06-04 15:43:46 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jonschacter/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jonschacter/.rvm/gems/ruby-2.6.1/gems/railties-6.0.3.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.7ms | Allocations: 315)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 1751)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-06-04 15:43:46 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/teams" for ::1 at 2020-06-04 15:43:51 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 22ms (Views: 0.5ms | ActiveRecord: 1.5ms | Allocations: 12537)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 15:44:14 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:7: syntax error, unexpected tSYMBEG, expecting '}'
+                :except => [:created_at, :upda...
+                ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:8: syntax error, unexpected '}', expecting end
+            }
+            ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:9: syntax error, unexpected ')', expecting end
+... => [:created_at, :updated_at])
+...                              ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:36: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/teams_controller.rb:7: syntax error, unexpected tSYMBEG, expecting '}'
+app/controllers/teams_controller.rb:8: syntax error, unexpected '}', expecting end
+app/controllers/teams_controller.rb:9: syntax error, unexpected ')', expecting end
+app/controllers/teams_controller.rb:36: syntax error, unexpected end-of-input, expecting end
+app/controllers/teams_controller.rb:7: syntax error, unexpected tSYMBEG, expecting '}'
+app/controllers/teams_controller.rb:8: syntax error, unexpected '}', expecting end
+app/controllers/teams_controller.rb:9: syntax error, unexpected ')', expecting end
+app/controllers/teams_controller.rb:36: syntax error, unexpected end-of-input, expecting end
+Started GET "/teams" for ::1 at 2020-06-04 15:44:22 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 8.9ms | Allocations: 11328)
+
+
+  
+NoMethodError (undefined method `serializable_hash' for 5:Integer):
+  
+app/controllers/teams_controller.rb:4:in `index'
+Started GET "/teams" for ::1 at 2020-06-04 15:44:32 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:6: syntax error, unexpected ':', expecting '}'
+                :include => []:teammates],
+                              ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:8: syntax error, unexpected '}', expecting end
+            }
+            ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:9: syntax error, unexpected ')', expecting end
+... => [:created_at, :updated_at])
+...                              ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:21: syntax error, unexpected tLAMBEG
+            render :json => { :errors => team.errors.full_...
+                            ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:21: syntax error, unexpected '}', expecting end
+...=> team.errors.full_messsages }
+...                              ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:36: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/teams_controller.rb:6: syntax error, unexpected ':', expecting '}'
+app/controllers/teams_controller.rb:8: syntax error, unexpected '}', expecting end
+app/controllers/teams_controller.rb:9: syntax error, unexpected ')', expecting end
+app/controllers/teams_controller.rb:21: syntax error, unexpected tLAMBEG
+app/controllers/teams_controller.rb:21: syntax error, unexpected '}', expecting end
+app/controllers/teams_controller.rb:36: syntax error, unexpected end-of-input, expecting end
+app/controllers/teams_controller.rb:6: syntax error, unexpected ':', expecting '}'
+app/controllers/teams_controller.rb:8: syntax error, unexpected '}', expecting end
+app/controllers/teams_controller.rb:9: syntax error, unexpected ')', expecting end
+app/controllers/teams_controller.rb:21: syntax error, unexpected tLAMBEG
+app/controllers/teams_controller.rb:21: syntax error, unexpected '}', expecting end
+app/controllers/teams_controller.rb:36: syntax error, unexpected end-of-input, expecting end
+Started GET "/teams" for ::1 at 2020-06-04 15:44:42 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.4ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 6.2ms | Allocations: 12537)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 15:47:49 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:7: syntax error, unexpected '\n', expecting =>
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:10: syntax error, unexpected '}', expecting end
+            }
+            ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:11: syntax error, unexpected ')', expecting end
+... => [:created_at, :updated_at])
+...                              ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:38: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/teams_controller.rb:7: syntax error, unexpected '\n', expecting =>
+app/controllers/teams_controller.rb:10: syntax error, unexpected '}', expecting end
+app/controllers/teams_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/teams_controller.rb:38: syntax error, unexpected end-of-input, expecting end
+app/controllers/teams_controller.rb:7: syntax error, unexpected '\n', expecting =>
+app/controllers/teams_controller.rb:10: syntax error, unexpected '}', expecting end
+app/controllers/teams_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/teams_controller.rb:38: syntax error, unexpected end-of-input, expecting end
+Started GET "/teams" for ::1 at 2020-06-04 15:47:59 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:7: syntax error, unexpected '\n', expecting =>
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:10: syntax error, unexpected '}', expecting end
+            }
+            ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:11: syntax error, unexpected ')', expecting end
+... => [:created_at, :updated_at])
+...                              ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:38: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/teams_controller.rb:7: syntax error, unexpected '\n', expecting =>
+app/controllers/teams_controller.rb:10: syntax error, unexpected '}', expecting end
+app/controllers/teams_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/teams_controller.rb:38: syntax error, unexpected end-of-input, expecting end
+app/controllers/teams_controller.rb:7: syntax error, unexpected '\n', expecting =>
+app/controllers/teams_controller.rb:10: syntax error, unexpected '}', expecting end
+app/controllers/teams_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/teams_controller.rb:38: syntax error, unexpected end-of-input, expecting end
+Started GET "/teams" for ::1 at 2020-06-04 15:48:00 -0700
+  
+SyntaxError (/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:7: syntax error, unexpected '\n', expecting =>
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:10: syntax error, unexpected '}', expecting end
+            }
+            ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:11: syntax error, unexpected ')', expecting end
+... => [:created_at, :updated_at])
+...                              ^
+/Users/jonschacter/Development/code/project/javascript/msf-teambuilder/msf-teambuilder-backend/app/controllers/teams_controller.rb:38: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/teams_controller.rb:7: syntax error, unexpected '\n', expecting =>
+app/controllers/teams_controller.rb:10: syntax error, unexpected '}', expecting end
+app/controllers/teams_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/teams_controller.rb:38: syntax error, unexpected end-of-input, expecting end
+app/controllers/teams_controller.rb:7: syntax error, unexpected '\n', expecting =>
+app/controllers/teams_controller.rb:10: syntax error, unexpected '}', expecting end
+app/controllers/teams_controller.rb:11: syntax error, unexpected ')', expecting end
+app/controllers/teams_controller.rb:38: syntax error, unexpected end-of-input, expecting end
+Started GET "/teams" for ::1 at 2020-06-04 15:55:44 -0700
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 9.8ms | Allocations: 12795)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 15:55:52 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 6.3ms | Allocations: 12487)
+
+
