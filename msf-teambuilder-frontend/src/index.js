@@ -3,7 +3,6 @@ const TEAMS_URL = `${BASE_URL}/teams`;
 const CHARS_URL = `${BASE_URL}/characters`;
 
 window.addEventListener("DOMContentLoaded", (event) => {
-    console.log("DOM loaded");
     const teamFormContainer = document.querySelector(".form-container")
     teamFormContainer.addEventListener("submit", addNewTeam);
     populateTeams();
@@ -132,7 +131,6 @@ function addNewCharacter(event){
 }
 
 function htmlifyCharacter(character){
-    // basic structure
     const ul = document.querySelectorAll(`*[team-id='${character.team_id}']`)[0].querySelector("ul")
     const li = document.createElement("li");
 
