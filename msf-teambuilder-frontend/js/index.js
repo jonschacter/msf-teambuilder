@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function(){
     // eventDelegation();
 })
 
+const teamList = document.getElementById("team-list");
+
 // window.addEventListener("DOMContentLoaded", (event) => {
 //     const teamFormContainer = document.querySelector(".form-container")
 //     teamFormContainer.addEventListener("submit", addNewTeam);
