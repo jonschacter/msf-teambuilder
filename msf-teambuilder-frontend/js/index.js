@@ -1,10 +1,37 @@
 document.addEventListener("DOMContentLoaded", function(){
     Team.loadTeams();
-    // mountTeamFormListener();
+    mountTeamFormListener();
     // eventDelegation();
 })
 
 const teamList = document.getElementById("team-list");
+const teamForm = document.querySelector(".form-container");
+const teamInput = document.querySelector(".input-text");
+
+function mountTeamFormListener(){
+    teamForm.addEventListener("submit", function(event){
+        event.preventDefault();
+        const nameNode = event.target.querySelector(".input-text")
+        const newTeamObject = {name: nameNode.value}
+        API.post(newTeamObject, API.teamsUrl);
+    });
+}
+
+function displayError(errorArray) {
+    const div = document.getElementById("error-message-div")
+    errorArray.forEach(function(message){
+        const p = document.createElement("p");
+        p.innerText = message;
+        div.appendChild(p);
+    })
+    setTimeout(function(){
+        div.innerHTML = "";
+    }, 5000);
+}
+
+function clearForm(){
+    teamInput.value = "";
+}
 
 // window.addEventListener("DOMContentLoaded", (event) => {
 //     const teamFormContainer = document.querySelector(".form-container")
@@ -219,14 +246,3 @@ const teamList = document.getElementById("team-list");
 //     htmlifySingleTeam(team, div);
 // }
 
-// function displayError(errorArray) {
-//     const div = document.getElementById("error-message-div")
-//     errorArray.forEach(function(message){
-//         const p = document.createElement("p");
-//         p.innerText = message;
-//         div.appendChild(p);
-//     })
-//     setTimeout(function(){
-//         div.innerHTML = "";
-//     }, 5000);
-// }

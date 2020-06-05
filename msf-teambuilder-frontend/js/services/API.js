@@ -19,4 +19,25 @@ class API {
             .then(resp => resp.json())
         )
     }
+
+    static post(data, url){
+        const options = {
+            ...API.options,
+            method: "POST",
+            body: JSON.stringify(data)
+        };
+
+        fetch(url, options)
+        .then(resp => resp.json())
+        .then((data) => {
+            if (!data.errors){
+                new Team(data);
+                Team.renderTeams();
+                clearForm();
+            } else {
+                displayError(data.errors);
+            }
+        })
+        .catch(alert)
+    }
 }
