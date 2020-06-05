@@ -1,11 +1,15 @@
 class Team {
     static all = []
 
-    constructor({id, name, sorted_characters}){
+    constructor({id, name, characters}){
         this.id = id;
         this.name = name;
-        this.characters = sorted_characters;
-        Team.all.push(this)
+        this.characters = [];
+        characters.forEach((character) =>{
+            const newChar = new Character(character);
+            this.characters.push(newChar);
+        });
+        Team.all.push(this);
     }
 
     htmlifyTeam(){
@@ -29,6 +33,16 @@ class Team {
 
     renderTeam(){
         teamList.innerHTML += this.htmlifyTeam();
+        this.characters.forEach((character)=>character.renderCharacter())
+        if (this.characters.length >= 5){
+            this.characterForm().style.display = "none";
+        } else {
+            this.characterForm().style.display = "block";
+        }
+    }
+
+    characterForm(){
+        return document.querySelectorAll(`*[team-id='${this.id}']`)[0].querySelector(".character-form")
     }
 
     static loadTeams(){

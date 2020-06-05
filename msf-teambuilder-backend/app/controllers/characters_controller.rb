@@ -5,7 +5,7 @@ class CharactersController < ApplicationController
         character.position = (team.characters.length + 1)
         if character.save
             render json: character.team.as_json(:include => {
-                :sorted_characters => {
+                :characters => {
                     :except => [:created_at, :updated_at]
                 }
             }, :except => [:created_at, :updated_at])
@@ -26,7 +26,7 @@ class CharactersController < ApplicationController
         end
 
         render json: character.team.as_json(:include => {
-                :sorted_characters => {
+                :characters => {
                     :except => [:created_at, :updated_at]
                 }
             }, :except => [:created_at, :updated_at])
@@ -47,7 +47,7 @@ class CharactersController < ApplicationController
         end
 
         render json: character.team.as_json(:include => {
-                :sorted_characters => {
+                :characters => {
                     :except => [:created_at, :updated_at]
                 }
             }, :except => [:created_at, :updated_at])
