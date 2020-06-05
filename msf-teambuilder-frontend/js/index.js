@@ -36,11 +36,30 @@ function clearForm(){
 function eventDelegation(){
     teamList.addEventListener("click",function(event){
         if (event.target.className === "team-delete-button") {
-            console.log("DELETING TEAM");
             const id = event.target.parentElement.parentElement.getAttribute("team-id");
             API.deleteTeam(id);
         }
     });
+}
+
+function addCharacterButtons(){
+    document.querySelectorAll(".team-card").forEach(function(div){
+        const liNodes = div.querySelectorAll("li")
+        liNodes.forEach(function(li, index){
+            // up button
+            if (index > 0) {
+                li.innerHTML += `<button class="up-button">^</button>`
+            }
+
+            // down button
+            if (index < li.parentElement.children.length - 1) {
+                li.innerHTML += `<button class="down-button">v</button>`
+            }
+
+            // delete button
+            li.innerHTML += `<button class="character-delete-button">-</button>`
+        })
+    })
 }
 
 // function addCharacterButtons(li, index) {
@@ -96,23 +115,6 @@ function eventDelegation(){
 //             displayError(data.errors);
 //         }
 //     })
-// }
-
-// function htmlifyCharacter(character){
-//     const ul = document.querySelectorAll(`*[team-id='${character.team_id}']`)[0].querySelector("ul")
-//     const li = document.createElement("li");
-
-//     li.setAttribute("character-id", `${character.id}`)
-//     li.innerText = `${character.name} - ${character.power}   `
-
-//     ul.appendChild(li);
-
-//     // hide form if full team - show if incomplete
-//     if (ul.childElementCount >= 5){
-//         ul.parentElement.querySelector("form").style.display = "none";
-//     } else {
-//         ul.parentElement.querySelector("form").style.display = "block";
-//     }
 // }
 
 // function deleteCharacter(event){

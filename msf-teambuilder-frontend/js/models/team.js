@@ -33,7 +33,9 @@ class Team {
 
     renderTeam(){
         teamList.innerHTML += this.htmlifyTeam();
-        this.characters.forEach((character)=>character.renderCharacter())
+        // render characters for team sorted by position
+        this.characters.sort((a, b) => (a.position > b.position) ? 1:-1).forEach((character)=>character.renderCharacter())
+        // toggle form if team is full
         if (this.characters.length >= 5){
             this.characterForm().style.display = "none";
         } else {
@@ -42,19 +44,21 @@ class Team {
     }
 
     characterForm(){
-        return document.querySelectorAll(`*[team-id='${this.id}']`)[0].querySelector(".character-form")
+        return document.querySelectorAll(`*[team-id='${this.id}']`)[0].querySelector(".character-form");
     }
 
-    static loadTeams(){
+    static loadTeams(callback){
         API.get(API.teamsUrl)
         .then(teams=>{
             teams.forEach(team => new Team(team));
             Team.renderTeams();
-        });
+        })
+        .then(console.log("2"))
     }
 
     static renderTeams(){
         teamList.innerHTML = "";
         Team.all.forEach(team => team.renderTeam());
+        addCharacterButtons();
     }
 }
