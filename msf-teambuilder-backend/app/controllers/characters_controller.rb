@@ -10,7 +10,7 @@ class CharactersController < ApplicationController
                 }
             }, :except => [:created_at, :updated_at])
         else
-            render :json => { :errors => character.errors.full_messsages }   
+            render :json => { :errors => character.errors.full_messages }   
         end
     end
 

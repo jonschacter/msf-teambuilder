@@ -121,11 +121,16 @@ function addNewTeam(event){
         body: JSON.stringify(newTeamObject)
     })
         .then(resp => resp.json())
-        .then(data => htmlifySingleTeam(data, null))
+        .then(data => {
+            if (!data.errors) {
+                htmlifySingleTeam(data, null);
+            } else {
+                displayError(data.errors);
+            }
+        })
         .then(() => {
             nameNode.value = "";
         })
-        .catch(error => console.log(error))
 }
 
 function deleteTeam(event){
@@ -155,8 +160,13 @@ function addNewCharacter(event){
         body: JSON.stringify(characterObject)
     })
     .then(resp => resp.json())
-    .then(data => refreshTeam(data))
-    .catch(error => console.log(error))
+    .then(data => {
+        if (!data.errors) {
+            refreshTeam(data);
+        } else {
+            displayError(data.errors);
+        }
+    })
 }
 
 function htmlifyCharacter(character){
@@ -217,4 +227,4 @@ function displayError(errorArray) {
     }, 5000);
 }
 
-displayError(["Name can't be blank", "Message 2"]);
+// displayError(["Name can't be blank", "Test Message 2"]);
