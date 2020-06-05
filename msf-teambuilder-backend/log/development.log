@@ -36509,3 +36509,133 @@ Processing by TeamsController#create as JSON
 Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 767)
 
 
+Started GET "/teams" for ::1 at 2020-06-04 16:58:01 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 5354)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 16:58:36 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 5343)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 16:58:46 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.3ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 5343)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 17:01:32 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 20ms (Views: 12.4ms | ActiveRecord: 0.8ms | Allocations: 5346)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 17:03:06 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 5343)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 17:03:13 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 5343)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 17:04:43 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 5343)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 17:04:52 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.1ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 5343)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 17:05:21 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 5343)
+
+
+Started GET "/teams" for ::1 at 2020-06-04 17:05:30 -0700
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 1]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 2]]
+  ↳ app/models/team.rb:10:in `sort_by'
+  [1m[36mCharacter Load (0.2ms)[0m  [1m[34mSELECT "characters".* FROM "characters" WHERE "characters"."team_id" = $1[0m  [["team_id", 3]]
+  ↳ app/models/team.rb:10:in `sort_by'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 5343)
+
+

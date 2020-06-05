@@ -204,3 +204,17 @@ function refreshTeam(team) {
     div.innerHTML = "";
     htmlifySingleTeam(team, div);
 }
+
+function displayError(errorArray) {
+    const div = document.getElementById("error-message-div")
+    errorArray.forEach(function(message){
+        const p = document.createElement("p");
+        p.innerText = message;
+        div.appendChild(p);
+    })
+    setTimeout(function(){
+        div.innerHTML = "";
+    }, 5000);
+}
+
+displayError(["Name can't be blank", "Message 2"]);
