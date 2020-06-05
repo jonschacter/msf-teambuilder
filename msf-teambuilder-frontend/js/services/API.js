@@ -40,4 +40,22 @@ class API {
         })
         .catch(alert)
     }
+
+    static deleteTeam(id){
+        const options = {
+            ...API.options,
+            method: "DELETE"
+        }
+
+        const url = API.teamsUrl + `/${id}`
+
+        fetch(url,options)
+        .then(resp => resp.json())
+        .then((data) => {
+            const index = Team.all.findIndex((team) => team.id === data.id)
+            Team.all.splice(index, 1)
+            Team.renderTeams();
+        })
+        .catch(alert)
+    }
 }

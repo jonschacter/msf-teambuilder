@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
     Team.loadTeams();
     mountTeamFormListener();
-    // eventDelegation();
+    eventDelegation();
 })
 
 const teamList = document.getElementById("team-list");
@@ -31,6 +31,16 @@ function displayError(errorArray) {
 
 function clearForm(){
     teamInput.value = "";
+}
+
+function eventDelegation(){
+    teamList.addEventListener("click",function(event){
+        if (event.target.className === "team-delete-button") {
+            console.log("DELETING TEAM");
+            const id = event.target.parentElement.parentElement.getAttribute("team-id");
+            API.deleteTeam(id);
+        }
+    });
 }
 
 // window.addEventListener("DOMContentLoaded", (event) => {

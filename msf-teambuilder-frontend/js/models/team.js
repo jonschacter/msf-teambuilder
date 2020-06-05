@@ -13,7 +13,7 @@ class Team {
             <div class="team-card" team-id="${this.id}">
                 <p>
                     ${this.name}
-                    <button>Delete</button>
+                    <button class="team-delete-button">Delete</button>
                 </p>
                 <form action="${API.charsUrl}" method="POST" class="character-form">
                     <input type="text" name="name" placeholder="Name" value="">
