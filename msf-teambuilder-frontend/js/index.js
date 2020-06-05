@@ -1,6 +1,8 @@
-const BASE_URL = "http://localhost:3000";
-const TEAMS_URL = `${BASE_URL}/teams`;
-const CHARS_URL = `${BASE_URL}/characters`;
+document.addEventListener("DOMContentLoaded", function(){
+    Team.loadTeams();
+    // mountTeamFormListener();
+    // eventDelegation();
+})
 
 // window.addEventListener("DOMContentLoaded", (event) => {
 //     const teamFormContainer = document.querySelector(".form-container")
