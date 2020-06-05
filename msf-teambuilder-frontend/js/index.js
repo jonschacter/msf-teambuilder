@@ -43,84 +43,6 @@ function eventDelegation(){
     });
 }
 
-// window.addEventListener("DOMContentLoaded", (event) => {
-//     const teamFormContainer = document.querySelector(".form-container")
-//     teamFormContainer.addEventListener("submit", addNewTeam);
-//     populateTeams();
-// });
-
-// function populateTeams(){
-//     fetch(TEAMS_URL)
-//         .then(resp => resp.json())
-//         .then(teams => {
-//             teams.forEach(team => {
-//                 htmlifySingleTeam(team, null);
-//             })
-//         });
-// }
-
-// function htmlifySingleTeam(team, fedDiv){
-//     const teamListDiv = document.getElementById("team-list");
-//     let div = null
-//     if (fedDiv === null) {
-//         div = document.createElement("div");
-//         teamListDiv.appendChild(div);
-//     } else {
-//         div = fedDiv;
-//     }
-//     const p = document.createElement("p");
-//     const button = document.createElement("button");
-//     const ul = document.createElement("ul");
-//     const form = document.createElement("form");
-//     const nameInput = document.createElement("input");
-//     const powerInput = document.createElement("input");
-//     const hiddenInput = document.createElement("input");
-//     const submitInput = document.createElement("input");
-
-//     div.classList.add("team-card");
-//     div.setAttribute("team-id", `${team.id}`);
-
-//     p.innerText = `${team.name}   `;
-
-//     button.textContent = "Delete";
-//     button.addEventListener("click", deleteTeam);
-
-//     form.action = CHARS_URL;
-//     form.method = "POST";
-//     form.classList.add("character-form");
-
-//     nameInput.type = "text";
-//     nameInput.name = "name";
-//     nameInput.placeholder = "Name";
-//     nameInput.value = "";
-
-//     powerInput.type = "number";
-//     powerInput.name = "power";
-//     powerInput.placeholder = "Power";
-//     powerInput.value = "";
-
-//     hiddenInput.type = "hidden";
-//     hiddenInput.name = "team_id";
-//     hiddenInput.value = `${team.id}`
-
-//     submitInput.type = "submit";
-//     submitInput.value = "Add";
-
-//     p.appendChild(button);
-//     form.appendChild(nameInput);
-//     form.appendChild(powerInput);
-//     form.appendChild(hiddenInput);
-//     form.appendChild(submitInput);
-
-//     div.appendChild(p);
-//     div.appendChild(form);
-//     div.appendChild(ul);
-
-//     submitInput.addEventListener("click", addNewCharacter);
-//     team.sorted_characters.forEach(character => htmlifyCharacter(character));
-//     div.querySelectorAll("li").forEach(addCharacterButtons)
-// }
-
 // function addCharacterButtons(li, index) {
 //     // up button
 //     if (index > 0) {
@@ -147,40 +69,6 @@ function eventDelegation(){
 //     deleteButton.innerText = "-"
 //     li.appendChild(deleteButton);
 //     deleteButton.addEventListener("click", deleteCharacter);
-// }
-
-// function addNewTeam(event){
-//     event.preventDefault();
-//     const nameNode = event.target.querySelector(".input-text")
-//     const newTeamObject = {name: nameNode.value}
-//     fetch(TEAMS_URL, {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json",
-//             "Accept": "application/json"
-//         },
-//         body: JSON.stringify(newTeamObject)
-//     })
-//         .then(resp => resp.json())
-//         .then(data => {
-//             if (!data.errors) {
-//                 htmlifySingleTeam(data, null);
-//             } else {
-//                 displayError(data.errors);
-//             }
-//         })
-//         .then(() => {
-//             nameNode.value = "";
-//         })
-// }
-
-// function deleteTeam(event){
-//     const div = event.target.parentElement.parentElement
-//     const teamId = div.getAttribute("team-id")
-//     fetch(`${TEAMS_URL}/${teamId}`, {
-//         method: "DELETE"
-//     })
-//         .then(div.remove());
 // }
 
 // function addNewCharacter(event){
@@ -249,10 +137,3 @@ function eventDelegation(){
 //     .then(resp => resp.json())
 //     .then(data => refreshTeam(data))
 // }
-
-// function refreshTeam(team) {
-//     const div = document.querySelectorAll(`*[team-id='${team.id}']`)[0];
-//     div.innerHTML = "";
-//     htmlifySingleTeam(team, div);
-// }
-
