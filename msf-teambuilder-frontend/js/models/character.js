@@ -10,17 +10,18 @@ class Character {
         Character.all.push(this);
     }
 
+
+    renderCharacter(){
+        const ul = document.querySelectorAll(`*[team-id='${this.team_id}']`)[0].querySelector("ul");
+        ul.innerHTML += this.htmlifyCharacter();
+    }
+    
     htmlifyCharacter(){
         return(`
             <li character-id="${this.id}">
                 ${this.name} - ${this.power}
             </li>
         `)
-    }
-
-    renderCharacter(){
-        const ul = document.querySelectorAll(`*[team-id='${this.team_id}']`)[0].querySelector("ul");
-        ul.innerHTML += this.htmlifyCharacter();
     }
 
     static findById(id){

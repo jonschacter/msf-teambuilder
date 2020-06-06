@@ -27,8 +27,8 @@ class API {
         .then(resp => resp.json())
         .then((data) => {
             if (!data.errors){
-                new Team(data);
-                Team.renderTeams();
+                const team = new Team(data);
+                team.renderTeam();
                 clearNewTeamForm();
             } else {
                 displayError(data.errors);
@@ -95,6 +95,7 @@ class API {
     }
 
     static moveCharacter(id, direction) {
+        // direction will be "up" or "down"
         const options = {
             ...API.options,
             method: "PATCH",

@@ -28,19 +28,19 @@ class Team {
                 <input type="hidden" name="team_id" value="${this.id}">
                 <input type="submit" value="Add Character">
             </form>
-            <ul>
-            </ul>
+            <ul></ul>
         `)
     }
 
     renderTeam(){
+        // create div if it doesn't exist
         if (!this.div()){
             this.createDiv();
         }
         this.div().innerHTML += this.htmlifyTeam();
-        // render characters for team sorted by position
+        // sort characters by position and render
         this.characters.sort((a, b) => (a.position > b.position) ? 1:-1).forEach((character)=>character.renderCharacter())
-       
+        
         this.addCharacterButtons();
        
         // toggle form if team is full
@@ -80,12 +80,10 @@ class Team {
             if (index > 0) {
                 li.innerHTML += `<button class="up-button">^</button>`
             }
-
             // down button
             if (index < li.parentElement.children.length - 1) {
                 li.innerHTML += `<button class="down-button">v</button>`
             }
-
             // delete button
             li.innerHTML += `<button class="character-delete-button">-</button>`
         })
