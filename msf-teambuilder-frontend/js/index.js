@@ -41,6 +41,12 @@ function eventDelegation(){
         } else if (event.target.className === "character-delete-button") {
             const id = event.target.parentElement.getAttribute("character-id");
             API.deleteCharacter(id);
+        } else if (event.target.className === "up-button") {
+            const id = event.target.parentElement.getAttribute("character-id");
+            API.moveCharacter(id, "up");
+        } else if (event.target.className === "down-button") {
+            const id = event.target.parentElement.getAttribute("character-id");
+            API.moveCharacter(id, "down");
         }
     });
 }

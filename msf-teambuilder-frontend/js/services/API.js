@@ -97,4 +97,23 @@ class API {
         })
         .catch(alert)
     }
+
+    static moveCharacter(id, direction) {
+        const options = {
+            ...API.options,
+            method: "PATCH",
+            body: JSON.stringify({move: direction})
+        }
+
+        const url = API.charsUrl + `/${id}`
+
+        fetch(url, options)
+        .then(resp => resp.json())
+        .then(data => {
+            const team = Team.findById(data.team_id);
+            const character = Character.findById(data.id);
+            character.position = data.position;
+            team.refresh();
+        })
+    }
 }

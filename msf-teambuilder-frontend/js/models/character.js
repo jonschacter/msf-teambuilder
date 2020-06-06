@@ -1,5 +1,5 @@
 class Character {
-    // static all = []
+    static all = []
 
     constructor({id, name, power, team_id, position}){
         this.id = id;
@@ -7,7 +7,7 @@ class Character {
         this.power = power;
         this.team_id = team_id;
         this.position = position;
-        // Character.all.push(this);
+        Character.all.push(this);
     }
 
     htmlifyCharacter(){
@@ -21,5 +21,9 @@ class Character {
     renderCharacter(){
         const ul = document.querySelectorAll(`*[team-id='${this.team_id}']`)[0].querySelector("ul");
         ul.innerHTML += this.htmlifyCharacter();
+    }
+
+    static findById(id){
+        return Character.all.find(character => character.id === id)
     }
 }
