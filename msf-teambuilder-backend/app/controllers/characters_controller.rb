@@ -1,14 +1,9 @@
 class CharactersController < ApplicationController
     def create
-        team = Team.find_by(id: params[:team_id])
         character = Character.new(character_params)
-        character.position = (team.characters.length + 1)
+        character.position = (character.team.characters.length + 1)
         if character.save
-            render json: character.team.as_json(:include => {
-                :characters => {
-                    :except => [:created_at, :updated_at]
-                }
-            }, :except => [:created_at, :updated_at])
+            render json: character.as_json(:except => [:created_at, :updated_at])
         else
             render :json => { :errors => character.errors.full_messages }   
         end
@@ -25,11 +20,7 @@ class CharactersController < ApplicationController
             end
         end
 
-        render json: character.team.as_json(:include => {
-                :characters => {
-                    :except => [:created_at, :updated_at]
-                }
-            }, :except => [:created_at, :updated_at])
+        render json: character.as_json(:except => [:created_at, :updated_at])
     end
 
     def update

@@ -20,20 +20,40 @@ class API {
         )
     }
 
-    static post(data, url){
+    static postTeam(data){
         const options = {
             ...API.options,
             method: "POST",
             body: JSON.stringify(data)
         };
 
-        fetch(url, options)
+        fetch(API.teamsUrl, options)
         .then(resp => resp.json())
         .then((data) => {
             if (!data.errors){
                 new Team(data);
                 Team.renderTeams();
                 clearForm();
+            } else {
+                displayError(data.errors);
+            }
+        })
+        .catch(alert)
+    }
+
+    static postCharacter(data){
+        const options = {
+            ...API.options,
+            method: "POST",
+            body: JSON.stringify(data)
+        }
+        fetch(API.charsUrl, options)
+        .then(resp => resp.json())
+        .then((data) => {
+            if (!data.errors){
+                const team = Team.findById(data.team_id)
+                team.addNewCharacter(data);
+                team.refresh();
             } else {
                 displayError(data.errors);
             }
@@ -55,6 +75,25 @@ class API {
             const index = Team.all.findIndex((team) => team.id === data.id)
             Team.all.splice(index, 1)
             Team.renderTeams();
+        })
+        .catch(alert)
+    }
+
+    static deleteCharacter(id){
+        const options = {
+            ...API.options,
+            method: "DELETE"
+        }
+
+        const url = API.charsUrl + `/${id}`
+
+        fetch(url,options)
+        .then(resp => resp.json())
+        .then((data) => {
+            const team = Team.findById(data.team_id);
+            const index = team.characters.findIndex((character) => character.id === data.id)
+            team.characters.splice(index, 1)
+            team.refresh();
         })
         .catch(alert)
     }
