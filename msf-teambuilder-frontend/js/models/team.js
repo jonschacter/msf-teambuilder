@@ -16,10 +16,6 @@ class Team {
         this.characters.push(newChar);
     }
 
-    static findById(id){
-        return Team.all.find(team => team.id === id)
-    }
-
     htmlifyTeam(){
         return(`
             <p>
@@ -72,18 +68,6 @@ class Team {
         })
     }
 
-    createDiv(){
-        teamList.innerHTML += `<div class="team-card" team-id="${this.id}"></div>`
-    }
-
-    div(){
-        return document.querySelectorAll(`*[team-id='${this.id}']`)[0];
-    }
-
-    characterForm(){
-        return document.querySelectorAll(`*[team-id='${this.id}']`)[0].querySelector(".character-form");
-    }
-
     refresh(){
         this.div().innerHTML = ""
         this.renderTeam();
@@ -107,6 +91,18 @@ class Team {
         })
     }
 
+    createDiv(){
+        teamList.innerHTML += `<div class="team-card" team-id="${this.id}"></div>`
+    }
+
+    div(){
+        return document.querySelectorAll(`*[team-id='${this.id}']`)[0];
+    }
+
+    characterForm(){
+        return document.querySelectorAll(`*[team-id='${this.id}']`)[0].querySelector(".character-form");
+    }
+
     static loadTeams(callback){
         API.get(API.teamsUrl)
         .then(teams=>{
@@ -118,5 +114,9 @@ class Team {
     static renderTeams(){
         teamList.innerHTML = "";
         Team.all.forEach(team => team.renderTeam());
+    }
+
+    static findById(id){
+        return Team.all.find(team => team.id === id)
     }
 }

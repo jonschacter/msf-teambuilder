@@ -1,7 +1,3 @@
-// const BASE_URL = "http://localhost:3000";
-// const TEAMS_URL = `${BASE_URL}/teams`;
-// const CHARS_URL = `${BASE_URL}/characters`;
-
 class API {
     static teamsUrl = "http://localhost:3000/teams"
     static charsUrl = "http://localhost:3000/characters"
@@ -33,7 +29,7 @@ class API {
             if (!data.errors){
                 new Team(data);
                 Team.renderTeams();
-                clearForm();
+                clearNewTeamForm();
             } else {
                 displayError(data.errors);
             }
