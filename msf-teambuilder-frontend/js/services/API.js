@@ -107,9 +107,11 @@ class API {
         fetch(url, options)
         .then(resp => resp.json())
         .then(data => {
-            const team = Team.findById(data.team_id);
-            const character = Character.findById(data.id);
-            character.position = data.position;
+            const team = Team.findById(data.character.team_id);
+            const character = Character.findById(data.character.id);
+            const displaced_char = Character.findById(data.displaced_character.id);
+            character.position = data.character.position;
+            displaced_char.position = data.displaced_character.position;
             team.refresh();
         })
     }

@@ -36,8 +36,11 @@ class CharactersController < ApplicationController
             displaced_char.move_up
             character.move_down
         end
-
-        render json: character.as_json(:except => [:created_at, :updated_at])
+        
+        render json: {
+            character: character.as_json(:except => [:created_at, :updated_at]),
+            displaced_character: displaced_char.as_json(:except => [:created_at, :updated_at])
+        }
     end
 
     private
