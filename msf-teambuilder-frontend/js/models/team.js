@@ -34,15 +34,15 @@ class Team {
 
     renderTeam(){
         // create div if it doesn't exist
-        if (!this.div()){
+        if (!this.div) {
             this.createDiv();
         }
-        this.div().innerHTML += this.htmlifyTeam();
+        this.div.innerHTML += this.htmlifyTeam();
         // sort characters by position and render
         this.characters.sort((a, b) => (a.position > b.position) ? 1:-1).forEach((character)=>character.renderCharacter())
         
         this.addCharacterButtons();
-       
+        
         // toggle form if team is full
         if (this.characters.length >= 5){
             this.characterForm().style.display = "none";
@@ -69,12 +69,12 @@ class Team {
     }
 
     refresh(){
-        this.div().innerHTML = ""
+        this.div.innerHTML = ""
         this.renderTeam();
     }
 
     addCharacterButtons(){
-        const liNodes = this.div().querySelectorAll("li")
+        const liNodes = this.div.querySelectorAll("li")
         liNodes.forEach(function(li, index){
             // up button
             if (index > 0) {
@@ -93,7 +93,7 @@ class Team {
         teamList.innerHTML += `<div class="team-card" team-id="${this.id}"></div>`
     }
 
-    div(){
+    get div(){
         return document.querySelectorAll(`*[team-id='${this.id}']`)[0];
     }
 
