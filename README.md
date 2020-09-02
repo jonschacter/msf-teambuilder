@@ -15,6 +15,10 @@ Then execute:
 
 Then open msf-teambuilder-frontend/index.html in your browser.
 
+## Video Walkthrough
+
+https://youtu.be/ozPyV0VSCYE
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/jonschacter/msf-teambuilder
